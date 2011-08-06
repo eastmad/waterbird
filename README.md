@@ -1,6 +1,10 @@
 # Waterbird #
 
-Waterbird was the response to a 7 day game challenge. Unfortunately I'm not a student, so that meant time grabbed during commuting and the weekend.
+Waterbird was the response to a 7 day game challenge. Unfortunately I'm not a student anymore, so that meant time grabbed during commuting and the weekend.
+While the game needs more content and balancing, it does show how the simple shoes framework is an effective prototype platform, 
+and possibly could be a complete one in time. A ruby based game development platform seems possible. 
+
+The game is based loosely on the start of civilization; click on a square to guide a settler there.
 
 ## Setup ##
 
@@ -16,7 +20,8 @@ Insert the path to shoes. Write that short script into the main directory.
 
 ## Playing ##
 
-
+The game is currently poorly balanced, so each Winter you will likely lose all your food. Keep making snew settlements with as many forests surrounding them 
+to ensure you create a surplus of food.
 
 ## What is missing ##
 
