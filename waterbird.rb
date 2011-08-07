@@ -1,3 +1,5 @@
+# A game written in ruby shoes
+
 require_relative "resource_type"
 require_relative "map"
 require_relative "settlement"
