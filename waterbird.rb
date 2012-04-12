@@ -6,6 +6,25 @@ require_relative "settlement"
 require_relative "season"
 require_relative "resources"
 
+def create_village tile
+  create_settlement tile, "graphics/settlement.gif"
+end
+
+def create_castle tile
+  create_settlement tile, "graphics/castle.gif"
+end
+
+def create_settlement tile, grp
+  info "create settlement"
+  im = image grp, :width => 48, :height => 48, :left => tile[:x] - 8, :top => tile[:y] - 8
+  @map_slot.contents() << im
+  Settlement.create tile
+  Settlement.exploited_tiles.each do |n|
+    ex_tile = @map.tile(n)
+    im = image "graphics/pickaxe.gif", :width => 16, :height => 16, :left => ex_tile[:x], :top => ex_tile[:y]
+    @map_slot.contents() << im
+  end
+end
 
 Shoes.app(:width => 1024, :height => 800, :title => "Waterbird 1.0") {
   background rgb(20, 42, 42)
@@ -286,24 +305,6 @@ Shoes.app(:width => 1024, :height => 800, :title => "Waterbird 1.0") {
   
 }
 
-def create_village tile
-  create_settlement tile, "graphics/settlement.gif"
-end
 
-def create_castle tile
-  create_settlement tile, "graphics/castle.gif"
-end
-
-def create_settlement tile, grp
-  info "create settlement"
-  im = image grp, :width => 48, :height => 48, :left => tile[:x] - 8, :top => tile[:y] - 8
-  @map_slot.contents() << im
-  Settlement.create tile
-  Settlement.exploited_tiles.each do |n|
-    ex_tile = @map.tile(n)
-    im = image "graphics/pickaxe.gif", :width => 16, :height => 16, :left => ex_tile[:x], :top => ex_tile[:y]
-    @map_slot.contents() << im
-  end
-end
 
 
